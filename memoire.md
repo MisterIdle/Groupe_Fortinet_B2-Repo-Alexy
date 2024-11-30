@@ -1,6 +1,6 @@
 # Mémoire Technique - Proposition pour l'Installation du Réseau et des Systèmes de Sécurité
 
-## . Introduction
+## Introduction
 
 Dans le cadre du développement du réseau d'entreprise, nous avons fait la mémoire technique de la proposition détaillée pour le déploiement du réseau informatique et des systèmes de sécurité dans le cadre du projet en cours. Il inclut les choix des équipements, les calculs des quantitatifs IP nécessaires, la vérification des besoins en PoE (Power over Ethernet), ainsi que des informations concernant la bande passante. De plus, les datasheets des équipements sélectionnés sont fournies pour chaque catégorie..
 
@@ -22,29 +22,71 @@ définis selon les départements et les types de services requis. Chaque VLAN es
 dimensionné pour accueillir les utilisateurs et équipements prévus, avec une marge de
 sécurité de 30% pour tenir compte de l’évolution du réseau.
 
-1. **VLAN 10 (RH)**
-- **Adresse réseau** : 10.0.1.0/24
-- **Plage d'adresses** : 10.0.1.1 - 10.0.1.254
-- **Appareils estimés avant marge** : 89
-- **Appareils estimés après marge (30%)** : 116
-2. **VLAN 20 (Comptabilité)**
-- **Adresse réseau** : 10.0.2.0/24
-- **Plage d'adresses** : 10.0.2.1 - 10.0.2.254
-- **Appareils estimés avant marge** : 115
-- **Appareils estimés après marge (30%)** : 150
-3. **VLAN 30 (Design)**
-- **Adresse réseau** : 10.0.3.0/24
-- **Plage d'adresses** : 10.0.3.1 - 10.0.3.254
-- **Appareils estimés avant marge** : 529
-- **Appareils estimés après marge (30%)** : 687
-4. **VLAN 120 (Invités Wi-Fi)**
-- **Adresse réseau** : 10.12.0.0/16
-- **Plage d'adresses** : 10.12.0.1 - 10.12.255.254
-- **Appareils estimés avant marge** : 400
-- **Appareils estimés après marge (30%)** : 520
+# Répartition des VLANs
 
-**Remarque** : La répartition des VLANs est conçue pour séparer les flux de données
-critiques (RH, Comptabilité, Design) et le réseau d'invités (Wi-Fi), garantissant ainsi la sécurité et la performance du réseau. Chaque VLAN a été calculé pour pouvoir supporter des ajouts futurs d'équipements.
+1. **VLAN 10 (RH)**  
+   - **Adresse réseau** : 10.0.10.0/24  
+   - **Plage d'adresses** : 10.0.10.1 - 10.0.10.254  
+
+2. **VLAN 20 (IT)**  
+   - **Adresse réseau** : 10.0.20.0/24  
+   - **Plage d'adresses** : 10.0.20.1 - 10.0.20.254  
+
+3. **VLAN 30 (Finance)**  
+   - **Adresse réseau** : 10.0.30.0/24  
+   - **Plage d'adresses** : 10.0.30.1 - 10.0.30.254  
+
+4. **VLAN 40 (Logistique)**  
+   - **Adresse réseau** : 10.0.40.0/24  
+   - **Plage d'adresses** : 10.0.40.1 - 10.0.40.254  
+
+5. **VLAN 50 (Production)**  
+   - **Adresse réseau** : 10.0.50.0/24  
+   - **Plage d'adresses** : 10.0.50.1 - 10.0.50.254  
+
+6. **VLAN 60 (Sécurité)**  
+   - **Adresse réseau** : 10.0.60.0/24  
+   - **Plage d'adresses** : 10.0.60.1 - 10.0.60.254  
+
+7. **VLAN 70 (Direction)**  
+   - **Adresse réseau** : 10.0.70.0/24  
+   - **Plage d'adresses** : 10.0.70.1 - 10.0.70.254  
+
+8. **VLAN 80 (Invités)**  
+   - **Adresse réseau** : 10.0.80.0/24  
+   - **Plage d'adresses** : 10.0.80.1 - 10.0.80.254  
+
+9. **VLAN 90**  
+   - **Adresse réseau** : 10.0.90.0/24  
+   - **Plage d'adresses** : 10.0.90.1 - 10.0.90.254  
+
+10. **VLAN 100**  
+    - **Adresse réseau** : 10.0.100.0/24  
+    - **Plage d'adresses** : 10.0.100.1 - 10.0.100.254  
+
+11. **VLAN 110**  
+    - **Adresse réseau** : 10.0.110.0/24  
+    - **Plage d'adresses** : 10.0.110.1 - 10.0.110.254    
+
+12. **VLAN 120**  
+    - **Adresse réseau** : 10.0.120.0/24  
+    - **Plage d'adresses** : 10.0.120.1 - 10.0.120.254   
+
+13. **VLAN 130**  
+    - **Adresse réseau** : 10.0.130.0/24  
+    - **Plage d'adresses** : 10.0.130.1 - 10.0.130.254  
+
+14. **VLAN 140**  
+    - **Adresse réseau** : 10.0.140.0/24  
+    - **Plage d'adresses** : 10.0.140.1 - 10.0.140.254  
+
+15. **VLAN 150**  
+    - **Adresse réseau** : 10.0.150.0/24  
+    - **Plage d'adresses** : 10.0.150.1 - 10.0.150.254  
+
+16. **VLAN 160**  
+    - **Adresse réseau** : 10.0.160.0/24  
+    - **Plage d'adresses** : 10.0.160.1 - 10.0.160.254   
 
 ---
 
@@ -61,7 +103,6 @@ Le comptage des équipements a été réalisé selon les besoins du projet. Voic
 | **Routeurs**                | Minimum recommandé : 1 + 1 pour redondance | 2     |
 | **Cœurs de réseau**         | Prévision pour évolutivité : 4       | 4            |
 
-Le comptage complet des équipements permet de garantir que chaque étage dispose des ressources nécessaires pour assurer la sécurité et la connectivité du bâtiment.
 
 ---
 
@@ -113,9 +154,7 @@ Pour assurer une infrastructure réseau sécurisée et fiable, les équipements 
 - **Coût de configuration du réseau** : 1 000,00 € (après marge de 30% : 700,00 €)
 
 ### 3.3 Estimation des Coûts Totaux
-- **Prix total des équipements** : 132 585,54 €
-
-Ces équipements sont sélectionnés en raison de leur performance, leur sécurité intégrée et leur capacité à répondre aux exigences de bande passante et de PoE.
+- **Prix total de l'intervention** : 132 600€
 
 ---
 
@@ -211,6 +250,3 @@ réseau fluide.
 2. **FortiSwitch 448D** : [Télécharger la datasheet](https://www.avfirewalls.com/datasheets/FortiSwitch/FortiSwitch_Secure_Access_Series.pdf)
 3. **FortiGate 200F** : [Télécharger la datasheet](https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortigate-200f-series.pdf)
 4. **FortiAP 231G** : [Télécharger la datasheet](https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/pdf/fortiap-series.pdf)
-
-## 7. Conclusion
- Cette proposition technique définit les équipements nécessaires pour déployer un réseau performant et sécurisé au sein de l'entreprise. Bien que le dimensionnement soit adapté aux besoins actuels, certains ajustements sont recommandés, notamment en termes de capacité PoE et de bande passante, pour garantir une scalabilité du réseau dans les années à venir. La mise en œuvre des équipements proposés nécessitera une planification détaillée et un suivi attentif de la part de l'équipe technique pour assurer une intégration optimale
