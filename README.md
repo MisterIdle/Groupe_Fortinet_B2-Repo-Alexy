@@ -24,7 +24,7 @@
 - **Responsable** : Tom
 
 ### DPGF & VLAN
-- **Responsable** : Alexy HOUBLOUP
+- **Responsable** : Alexy
 
 ---
 
