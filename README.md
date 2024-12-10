@@ -4,7 +4,7 @@
 - **Tom SOARES**
 - **Alexy HOUBLOUP**
 - **Ashley Waynell TAGNE NEGUEKO**
-- **Noah**
+- **Noah SEVERIN**
 
 ---
 
